@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     
     @property
     def DATABASE_URL(self) -> str:
-        return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRE_DB}"
+        return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
     
     #Configuration du chargement .env
     model_config = SettingsConfigDict(
@@ -25,4 +25,4 @@ class Settings(BaseSettings):
         case_sensitive=True
     )
     
-setttings = Settings()
+settings = Settings()

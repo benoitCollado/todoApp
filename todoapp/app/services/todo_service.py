@@ -1,3 +1,6 @@
+from app.repositories.todo_repository import TodoRepository
+from app.models.item import TodoCreate
+
 class TodoService:
     def __init__(self, repo : TodoRepository):
         self.repo = repo

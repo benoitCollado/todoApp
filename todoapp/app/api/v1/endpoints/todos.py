@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends
-from app.database import get_session
+from app.database.database import get_session
 from app.repositories.todo_repository import TodoRepository
 from app.services.todo_service import TodoService
+from app.models.item import Todo, TodoCreate
 
 router = APIRouter()
 
