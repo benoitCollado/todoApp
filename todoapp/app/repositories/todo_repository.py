@@ -1,6 +1,6 @@
 from sqlmodel import select
 from app.models.item import Todo, TodoCreate, TodoUpdate
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlmodel.ext.asyncio.session import AsyncSession
 
 class TodoRepository:
     def __init__(self, session: AsyncSession):
@@ -37,7 +37,7 @@ class TodoRepository:
                 raise ValueError("Todo not found")
             todo.title = todo_data.title
             todo.description = todo_data.description
-            todo.completed = todo_data.completed
+            todo.is_completed = todo_data.is_completed
             await self.session.commit()
             await self.session.refresh(todo)    
             return todo

@@ -33,5 +33,5 @@ async def update_todo(todo_data: TodoUpdate, session=Depends(get_session)):
 @router.delete("/{todo_id}", response_model=bool)
 async def delete_todo(todo_id:int, session=Depends(get_session)):
     repo = TodoRepository(session)
-    service = TodoRepository(repo)
+    service = TodoService(repo)
     return await service.delete(todo_id)

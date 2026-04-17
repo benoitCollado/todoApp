@@ -23,3 +23,5 @@ services:
       - .env
     ports:
      - "8888:8000"
+    volumes:
+      - ./todoapp/migrations:/code/app/todoapp/migrations
