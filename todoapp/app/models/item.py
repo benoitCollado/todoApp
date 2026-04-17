@@ -11,3 +11,6 @@ class Todo(TodoBase, table=True):
     
 class TodoCreate(TodoBase):
     pass
+
+class TodoUpdate(TodoBase):
+    id: int
