@@ -1,17 +1,17 @@
 import uvicorn
 from fastapi import FastAPI
 from app.api.v1.api import api_router
-from app.core.config import setttings
-from app.database import engine
+from app.core.config import settings
+from app.database.database import engine
 from sqlmodel import SQLModel
 
 app = FastAPI(
-    title = setttings.PROJECT_NAME,
+    title = settings.PROJECT_NAME,
     version = settings.VERSION,
     description =  "API évolutive et asynchrone pour la gestiond e tâches "
 )
 
-app.includes_router(api_router, prefix="/api/v1")
+app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health")
 async def health_check():
